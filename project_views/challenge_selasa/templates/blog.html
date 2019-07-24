@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            <div class="container pt-5 pr-5 pl-5">
+                {% for i in blogs %}
+                <div class="row text-center pt-3 pb-3">
+                    <div class="col-12">
+                        <img src="{{ i.foto_url }}" width=600px alt="">
+                    </div>
+                </div>
+                <div class="row pb-5">
+                    <div class="col-9 text-left">
+                        <p class="text-dark">{{i.tanggal}}</p>
+                    </div>
+                    <div class="col-3 text-right">       
+                        <p class="text-dark">{{i.komentar}} Comment(s)</p>
+                    </div>
+                    <div class="col-12">
+                        <h2>{{i.judul}}</h2>
+                    </div>  
+                    <div class="col-12">
+                        <p>{{i.isi | safe | truncatewords:"50" | linebreaks}}</p>
+                    </div>
+                    <a href="">
+                        Baca Selengkapnya....
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alphatech Academy</title>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+    <!-- pemanggilan file css di static tidak diaktifkan karena project dibuat tanpa css selain dari bootstrap -->
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css'%}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row text-align-center navbar-fixed-top">
+                <div class="col-8 align-self-center">
+                    <h5><a class="navbar-brand navbar-collapse nav-item nav-link active text-dark" href="{% url 'home' %}">Alpha Tech Academy</a></h5>
+                </div>
+                <div class="col-4">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link active" href="{% url 'home' %}">Home</a>
+                                <a class="nav-item nav-link active" href="{% url 'blog' %}">Blog</a>
+                                <a class="nav-item nav-link active" href="{% url 'mentor' %}">Mentor</a>
+                                <a class="nav-item nav-link active" href="{% url 'mentee' %}">Mentee</a>
+                                <a class="nav-item nav-link active" href="{% url 'author' %}">Author</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>    
+        <div class="container-fluid bg-info text-white" >
+            <div class="row text-center pt-4 pb-2 justify-content-center">
+                <div class="col-7">
+                    <img src="https://i.postimg.cc/mrRR4MFM/alpha-logo.png" alt="">
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-6 pb-4">
+                    <h1>Alpha Teknologi Indonesia</h1>
+                    <h5>Alpha Tech Academy is a tech incubator that gives everyone (even non IT background) a chance to be a professional Tech Talent within 3 months. Contact Person: Email: academy@aplhatech.id Mobile phone: 0877 9609 9530</h5>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    <footer>
+        <div class="container-fluid">
+            <div class="row text-align-center bg-info pt-4 pb-3">
+                <div class="col-12 align-self-center text-center">
+                    <h5>Our Product:  
+                    <img height="30px" src="https://i.postimg.cc/XY93txX4/logo-grey-alphapay.png" alt="">
+                    <img height="30px" src="https://i.postimg.cc/9fjXfKsD/logo-grey-sepulsa.png" alt="">
+                    <img height="30px" src="https://i.postimg.cc/gJ2WXWs2/logo-grey-alphabill.png" alt="">
+                    </h5>
+                </div>
+            </div>
+            <div class="row footer-bottom justify-content-center bg-dark pt-3 pb-3">
+                <div class="col-8 text-center text-white">
+                    <h6> Contact Person: Mobile phone: 0877 9609 9530. Email <a href="">academy@aplhatech.id</a></h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
